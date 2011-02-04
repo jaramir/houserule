@@ -1,0 +1,10 @@
+
+    [paste.app_factory]
+    main = houserule.config.middleware:make_app
+
+    [paste.app_install]
+    main = pylons.util:PylonsInstaller
+
+    [paste.paster_command]
+    syncdb = couchdbkit.ext.pylons.commands:SyncDbCommand
+    

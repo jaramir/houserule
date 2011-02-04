@@ -1,0 +1,11 @@
+# questo file contiene dati personali
+development.ini
+
+# files di backup di emacs
+*~
+
+# bytecode python
+*.pyc
+
+# directory di cache dei template
+data

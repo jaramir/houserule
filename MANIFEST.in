@@ -1,0 +1,3 @@
+include houserule/config/deployment.ini_tmpl
+recursive-include houserule/public *
+recursive-include houserule/templates *
