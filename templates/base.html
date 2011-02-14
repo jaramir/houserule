@@ -8,20 +8,10 @@
     <link rel="stylesheet" href="{{ static_url( 'base.css' ) }}" type="text/css">
   </head>
   <body>
-
-    <div id="header">
-      testata
-    </div>
-
-    <div id="main">
-      {% block main %}
-        qui non c'è niente da vedere..
-      {% end %}
-    </div>
-
-    <div id="footer">
-      piè di pagina
-    </div>
-
+  <img id="logo" src="{{ static_url('logo_bt.png') }}" />
+  <div id="main">
+    {% block body %}
+    {% end %}
+  </div>
   </body>
 </html>

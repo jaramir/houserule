@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block body %}
+  <p>Benvenuto su HouseRule, il social network dei giocatori</p>
+  <form action="/login" method="post">
+    {{ xsrf_form_html() }}
+    <input type="hidden" name="next" value="{{ next }}" />
+    <table>
+      <tr>
+        <td>Nome utente</td>
+        <td><input type="text" name="username" value="" /></td>
+      </tr>
+      <tr>
+        <td>Password</td>
+        <td><input type="password" name="password" value="" /></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td><input type="submit" value="Accedi" /></td>
+      </tr>
+    </table>
+  </form>
+{% end %}
+
