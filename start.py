@@ -7,11 +7,12 @@ from tornado.options import define, options, parse_command_line
 from tornado.web import Application
 import houserule.handlers
 import couchdb
+import base64
+import uuid
+import design
 
 def generate_cookie_secret():
     # https://gist.github.com/823887
-    import base64
-    import uuid
     return base64.b64encode( uuid.uuid4().bytes + uuid.uuid4().bytes )
 
 # local options
@@ -24,6 +25,7 @@ class Houserule( Application ):
         handlers = (
             ( "/", houserule.handlers.FrontPage ),
             ( "/login", houserule.handlers.Login ),
+            ( "/logout", houserule.handlers.Logout ),
             ( "/register", houserule.handlers.Register ),
             ( "/profile", houserule.handlers.Profile ),
             )
@@ -41,6 +43,7 @@ class Houserule( Application ):
         if not options.db_name in couch:
             couch.create( options.db_name )
         self.db = couch[options.db_name]
+        design.sync_db( self.db )
 
 if __name__ == "__main__":
     parse_command_line() # enables logging to stdout!

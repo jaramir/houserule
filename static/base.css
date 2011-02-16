@@ -2,12 +2,12 @@ body {
 }
 
 #main {
-    margin-left: 200px;
+    margin-left: 140px;
 }
 
 #logo {
     position: absolute;
-    top: 0;
-    left: 0;    
+    top: 10px;
+    left: 10px;
 }
 

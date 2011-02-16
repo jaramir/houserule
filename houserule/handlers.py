@@ -44,7 +44,12 @@ class Login( BaseHandler ):
             self.redirect( self.get_argument( "next", "/profile" ) )
         else:
             self.render( "index.html", message="Nome utente o passoword errata" )
-        
+
+class Logout( BaseHandler ):
+    def get( self ):
+        self.clear_cookie( "user" )
+        self.redirect( self.get_argument( "next", "/" ) )
+
 class Register( BaseHandler ):
     def post( self ):
         # TODO verifica che non esiste già un'utente con lo stesso nome
@@ -58,4 +63,3 @@ class Register( BaseHandler ):
             }
         self.render( "index.html", message="Il tuo account è stato creato. "
             "Riceverai a breve una e-mail con il link per l'attivazione." )
-

@@ -4,20 +4,16 @@
 import couchdb
 from couchdb.design import ViewDefinition
 
-db_url = "http://localhost:5984/" # TODO leggi parametro dalla cmdline
-db_name = "hr" # TODO leggi parametro dalla cmdline
+def sync_db( db ):
+    views = [
+        ViewDefinition( "users", "by_username", """
+            function( doc ) { 
+                if( doc.username ) {
+                    emit( doc.username, doc );
+                }
+            } """ ),
+        ]
+    ViewDefinition.sync_many( db, views, remove_missing=True )
 
-couch = couchdb.Server( db_url ) 
-db = couch[db_name] 
-
-views = [
-    ViewDefinition( "users", "by_username", """
-        function( doc ) { 
-            if( doc.username ) {
-                emit( doc.username, doc );
-            }
-        } """ ),
-    ]
-
-ViewDefinition.sync_many( db, views, remove_missing=True )
-
+if __name__ == "__main__":
+    sync_db( couchdb.Server()["hr"] )
