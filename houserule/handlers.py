@@ -3,10 +3,8 @@
 
 import tornado.web
 import logging
-import uuid
-
-def newid():
-    return uuid.uuid4().hex
+import couchdbkit
+from model import User
 
 class BaseHandler( tornado.web.RequestHandler ):
     @property
@@ -38,9 +36,9 @@ class Login( BaseHandler ):
         # TODO gestione errori
         username = self.get_argument( "username" )
         password = self.get_argument( "password" )
-        rset = self.db.view( "users/by_username", key=username )
-        if len( rset ) > 0 and rset.rows[0].value["password"] == password:
-            self.set_secure_cookie( "user", rset.rows[0].id )
+        user = User.view( "users/by_username", key=username ).one()
+        if user and user.password == password:
+            self.set_secure_cookie( "user", user._id )
             self.redirect( self.get_argument( "next", "/profile" ) )
         else:
             self.render( "index.html", message="Nome utente o passoword errata" )
@@ -56,10 +54,10 @@ class Register( BaseHandler ):
         # TODO non salvare la password in chiaro
         # TODO attivazione via email
         # TODO come gestire gli errori?
-        self.db[newid()] = {
-            "username": self.get_argument( "username" ),
-            "password": self.get_argument( "password" ),
-            "email": self.get_argument( "email" ),
-            }
+        user = User()
+        user.username = self.get_argument( "username" )
+        user.password = self.get_argument( "password" )
+        user.email = self.get_argument( "email" )
+        user.save()        
         self.render( "index.html", message="Il tuo account è stato creato. "
             "Riceverai a breve una e-mail con il link per l'attivazione." )

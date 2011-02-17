@@ -6,10 +6,10 @@ from tornado.ioloop import IOLoop
 from tornado.options import define, options, parse_command_line
 from tornado.web import Application
 import houserule.handlers
-import couchdb
+import houserule.model
+import couchdbkit
 import base64
 import uuid
-import design
 
 def generate_cookie_secret():
     # https://gist.github.com/823887
@@ -39,11 +39,11 @@ class Houserule( Application ):
             }
         Application.__init__( self, handlers, **settings )
         
-        couch = couchdb.Server( options.db_url )
+        couch = couchdbkit.Server( options.db_url )
         if not options.db_name in couch:
-            couch.create( options.db_name )
+            couch.create_db( options.db_name )
         self.db = couch[options.db_name]
-        design.sync_db( self.db )
+        houserule.model.init( self.db )
 
 if __name__ == "__main__":
     parse_command_line() # enables logging to stdout!
