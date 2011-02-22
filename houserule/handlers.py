@@ -37,7 +37,7 @@ class Login( BaseHandler ):
         username = self.get_argument( "username" )
         password = self.get_argument( "password" )
         user = User.view( "users/by_username", key=username ).one()
-        if user and user.password == password:
+        if user and user.verify_password( password ):
             self.set_secure_cookie( "user", user._id )
             self.redirect( self.get_argument( "next", "/profile" ) )
         else:
@@ -50,14 +50,24 @@ class Logout( BaseHandler ):
 
 class Register( BaseHandler ):
     def post( self ):
-        # TODO verifica che non esiste già un'utente con lo stesso nome
-        # TODO non salvare la password in chiaro
         # TODO attivazione via email
         # TODO come gestire gli errori?
+
+        username = self.get_argument( "username" )
+        password = self.get_argument( "password" )
+        email = self.get_argument( "email" )
+        
+        # verifica che non esiste già un'utente con lo stesso nome
+        user = User.view( "users/by_username", key=username ).one()
+        if user:
+            self.render( "index.html", message="Esiste già un'account con questo nome" )
+            return
+        
         user = User()
-        user.username = self.get_argument( "username" )
-        user.password = self.get_argument( "password" )
-        user.email = self.get_argument( "email" )
-        user.save()        
+        user.username = username
+        user.password = User.hash_password( password )
+        user.email = email
+        user.save()
+
         self.render( "index.html", message="Il tuo account è stato creato. "
             "Riceverai a breve una e-mail con il link per l'attivazione." )
