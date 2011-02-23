@@ -15,7 +15,7 @@ class BaseHandler( tornado.web.RequestHandler ):
         user_id = self.get_secure_cookie( "user" )
         if not user_id:
            return None
-        return self.db.get( user_id )
+        return User.get( user_id )
 
 class FrontPage( BaseHandler ):
     def get( self ):
