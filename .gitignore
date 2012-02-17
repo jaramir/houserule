@@ -1,8 +1,0 @@
-# questo file contiene dati personali
-config.ini
-
-# files di backup di emacs
-*~
-
-# bytecode python
-*.pyc
