@@ -1,9 +1,33 @@
-# Houserule
+HouseRule.it
+============
 
-A social network for italian gamers (boardgames, rpg..)
+What
+----
 
-## Libs used
+Organize boardgames matches
 
-*  [tornado](https://github.com/facebook/tornado)
-*  [py-bcrypt](http://www.mindrot.org/projects/py-bcrypt/)
-*  [couchdbkit](https://github.com/benoitc/couchdbkit)
+How
+---
+
+* Register
+* Organize
+* Partecipate
+* Give FeedBack
+* Receive Badges
+
+A Match has
+-----------
+
+* an Organizer
+* a Location
+* a Time and Date
+* a BoardGame that will be played
+* one or more Partecipants
+
+Character
+---------
+
+* Connected
+* Funny
+* Reliable
+
