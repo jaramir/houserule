@@ -3,7 +3,6 @@
 
 import os
 import flask
-import urlparse
 
 app = flask.Flask( __name__ )
 
@@ -12,8 +11,7 @@ def hello():
     return flask.render_template( "index.html" )
 
 if __name__ == '__main__':
-    db = urlparse.urlparse( os.environ.get( "DATABASE_URL", "" ) )
-    print db
+    print "DB_URL:", os.environ.get( "DATABASE_URL", "" )
 
     port = int( os.environ.get( "PORT", 5000 ) )
 
