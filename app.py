@@ -11,7 +11,7 @@ def hello():
     return flask.render_template( "index.html" )
 
 if __name__ == '__main__':
-    print "DB_URL:", os.environ.get( "DATABASE_URL", "" )
+    print "S_DB_URL:", os.environ.get( "SHARED_DATABASE_URL", "" )
 
     port = int( os.environ.get( "PORT", 5000 ) )
 
