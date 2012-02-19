@@ -11,7 +11,7 @@ def hello():
     return flask.render_template( "index.html" )
 
 if __name__ == '__main__':
-    print "S_DB_URL:", os.environ.get( "SHARED_DATABASE_URL", "" )
+    print "DB:", os.environ["HEROKU_SHARED_POSTGRESQL_ORANGE_URL"]
 
     port = int( os.environ.get( "PORT", 5000 ) )
 
