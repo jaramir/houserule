@@ -43,9 +43,9 @@ def logout():
     flash( "Buon gioco!" )
     return redirect( url_for( "index" ) )
 
-@app.route( "/initdb" )
-@login_required
-def initdb():
-    db.create_all()
-    return redirect( url_for( "index" ) )
+#@app.route( "/initdb" )
+#@login_required
+#def initdb():
+#    db.create_all()
+#    return redirect( url_for( "index" ) )
 
