@@ -1,11 +1,18 @@
-<!doctype html>
-<html>
-  <head>
-    <title>HouseRule</title>
-    <link rel="stylesheet" href="{{ url_for( 'static', filename='main.css' ) }}" />
-    <link rel="shortcut icon" href="{{ url_for( 'static', filename='favicon.ico' ) }}" />
-  </head>
-  <body>
-    <div id="logo"></div>
-  </body>
-</html>
+{% extends "layout.html" %}
+
+{% block body %}
+  <ul id="menu">
+    <li>
+      <a href="{{ url_for( "register" ) }}">Registrati</a>
+    </li>
+    {% if current_user.is_authenticated() %}
+      <li>
+        <a href="{{ url_for( "logout" ) }}">Esci</a>
+      </li>
+    {% else %}
+      <li>
+        <a href="{{ url_for( "login" ) }}">Accedi</a>
+      </li>
+    {% endif %}
+  </ul>
+{% endblock %}
