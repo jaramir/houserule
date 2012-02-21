@@ -31,3 +31,8 @@ Character
 * Funny
 * Reliable
 
+Who
+---
+
+* jaramir <jaramir@gmail.com>
+* bianc0niglio <andrea.papotti@gmail.com>
