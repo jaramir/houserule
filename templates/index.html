@@ -2,14 +2,14 @@
 
 {% block body %}
   <ul id="menu">
-    <li>
-      <a href="{{ url_for( "register" ) }}">Registrati</a>
-    </li>
     {% if current_user.is_authenticated() %}
       <li>
         <a href="{{ url_for( "logout" ) }}">Esci</a>
       </li>
     {% else %}
+      <li>
+        <a href="{{ url_for( "register" ) }}">Registrati</a>
+      </li>
       <li>
         <a href="{{ url_for( "login" ) }}">Accedi</a>
       </li>
