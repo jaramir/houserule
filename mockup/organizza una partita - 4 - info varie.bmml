@@ -1,0 +1,78 @@
+<mockup version="1.0" skin="sketch" measuredW="1288" measuredH="743" mockupW="1128" mockupH="612">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="160" y="131" w="800" h="600" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>HouseRule%0Ahttp%3A//www.houserule.it/</text>
+        <verticalScrollbar>false</verticalScrollbar>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::Image" x="178" y="212" w="-1" h="-1" measuredW="279" measuredH="64" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/logo.jpg</src>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::Title" x="526" y="224" w="376" h="-1" measuredW="355" measuredH="41" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>32</size>
+        <text>Organizza%20una%20partita%20di..</text>
+      </controlProperties>
+    </control>
+    <control controlID="23" controlTypeID="com.balsamiq.mockups::Accordion" x="178" y="280" w="764" h="383" measuredW="290" measuredH="234" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>3</selectedIndex>
+        <text>Il%20Gioco%3A%20Die%20Macher%0ALa%20data%20e%20l%27orario%3A%20Sabato%2015%20Febbraio%20alle%2020%3A30%0ALa%20Location%3A%20Locanda%20del%20Pirata%20Orbo%0AAltre%20informazioni</text>
+        <verticalScrollbar>false</verticalScrollbar>
+      </controlProperties>
+    </control>
+    <control controlID="24" controlTypeID="com.balsamiq.mockups::Button" x="364" y="663" w="378" h="36" measuredW="220" measuredH="30" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <color>13369344</color>
+        <icon>ThumbsUpIcon%7Csmall</icon>
+        <text>Salva%20e%20pubblica%20in%20bacheca%21</text>
+      </controlProperties>
+    </control>
+    <control controlID="66" controlTypeID="com.balsamiq.mockups::iPhone" x="1006" y="162" w="-1" h="-1" measuredW="282" measuredH="510" zOrder="5" locked="false" isInGroup="-1"/>
+    <control controlID="67" controlTypeID="com.balsamiq.mockups::StickyNote" x="757" y="620" w="-1" h="-1" measuredW="109" measuredH="123" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Solo%20adesso%20si%20attiva%20il%20bottone%20finale</text>
+      </controlProperties>
+    </control>
+    <control controlID="68" controlTypeID="com.balsamiq.mockups::TextArea" x="206" y="420" w="266" h="119" measuredW="200" measuredH="140" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Partita%20per%20principianti</text>
+      </controlProperties>
+    </control>
+    <control controlID="69" controlTypeID="com.balsamiq.mockups::Label" x="191" y="399" w="-1" h="-1" measuredW="98" measuredH="21" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Informazioni%20utili%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="70" controlTypeID="com.balsamiq.mockups::StickyNote" x="601" y="405" w="316" h="183" measuredW="109" measuredH="123" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>***%20Idee%20***%0APubblicizza%20su%20Facebook%2C%20Twitter..%0AManda%20un%20invito%20a..%0AMandami%20un%20sms/email%206%20ore%20prima..</text>
+      </controlProperties>
+    </control>
+    <control controlID="71" controlTypeID="com.balsamiq.mockups::Label" x="191" y="554" w="-1" h="-1" measuredW="160" measuredH="21" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Numero%20minimo%20di%20giocatori%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="73" controlTypeID="com.balsamiq.mockups::TextInput" x="378" y="551" w="-1" h="-1" measuredW="23" measuredH="27" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>2</text>
+      </controlProperties>
+    </control>
+    <control controlID="74" controlTypeID="com.balsamiq.mockups::TextInput" x="378" y="585" w="-1" h="-1" measuredW="22" measuredH="27" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>6</text>
+      </controlProperties>
+    </control>
+    <control controlID="75" controlTypeID="com.balsamiq.mockups::Label" x="191" y="588" w="-1" h="-1" measuredW="170" measuredH="21" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Numero%20massimo%20di%20giocatori%3A</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

@@ -1,0 +1,106 @@
+<mockup version="1.0" skin="sketch" measuredW="1288" measuredH="731" mockupW="1128" mockupH="600">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="160" y="131" w="800" h="600" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>HouseRule%0Ahttp%3A//www.houserule.it/</text>
+        <verticalScrollbar>false</verticalScrollbar>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::Image" x="178" y="212" w="-1" h="-1" measuredW="279" measuredH="64" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/logo.jpg</src>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::Title" x="526" y="224" w="376" h="-1" measuredW="355" measuredH="41" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>32</size>
+        <text>Organizza%20una%20partita%20di..</text>
+      </controlProperties>
+    </control>
+    <control controlID="23" controlTypeID="com.balsamiq.mockups::Accordion" x="178" y="280" w="764" h="383" measuredW="290" measuredH="234" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>2</selectedIndex>
+        <text>Il%20Gioco%3A%20Die%20Macher%0ALa%20data%20e%20l%27orario%3A%20Sabato%2015%20Febbraio%20alle%2020%3A30%0ALa%20Location%0AAltre%20informazioni</text>
+        <verticalScrollbar>false</verticalScrollbar>
+      </controlProperties>
+    </control>
+    <control controlID="24" controlTypeID="com.balsamiq.mockups::Button" x="364" y="663" w="378" h="36" measuredW="220" measuredH="30" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <icon>ThumbsUpIcon%7Csmall</icon>
+        <text>Salva%20e%20pubblica%20in%20bacheca%21</text>
+      </controlProperties>
+    </control>
+    <control controlID="52" controlTypeID="com.balsamiq.mockups::List" x="193" y="396" w="163" h="126" measuredW="100" measuredH="126" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>1</selectedIndex>
+        <text>Club%20TreEmme%20Carpi%0AClub%20TreEmme%20Modena%0ACasa%20di%20Cesco%0ASuburbia</text>
+      </controlProperties>
+    </control>
+    <control controlID="53" controlTypeID="com.balsamiq.mockups::StickyNote" x="315" y="442" w="-1" h="-1" measuredW="109" measuredH="123" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Vedi%20le%20location%20che%20hai%20gi%E0%20usato%20e/o%20visitato</text>
+      </controlProperties>
+    </control>
+    <control controlID="54" controlTypeID="com.balsamiq.mockups::Label" x="337" y="360" w="-1" h="-1" measuredW="267" measuredH="21" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Scegli%20dall%27elenco%20o%20inserisci%20una%20nuova%20location</text>
+      </controlProperties>
+    </control>
+    <control controlID="55" controlTypeID="com.balsamiq.mockups::VRule" x="439" y="381" w="-1" h="223" measuredW="5" measuredH="100" zOrder="8" locked="false" isInGroup="-1"/>
+    <control controlID="56" controlTypeID="com.balsamiq.mockups::Label" x="451" y="391" w="-1" h="-1" measuredW="119" measuredH="21" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Nome%20della%20location%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="57" controlTypeID="com.balsamiq.mockups::Label" x="457" y="421" w="-1" h="-1" measuredW="57" measuredH="21" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Indirizzo%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="58" controlTypeID="com.balsamiq.mockups::Label" x="779" y="461" w="-1" h="-1" measuredW="94" measuredH="21" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Informazioni%20utili</text>
+      </controlProperties>
+    </control>
+    <control controlID="59" controlTypeID="com.balsamiq.mockups::Map" x="459" y="459" w="252" h="128" measuredW="252" measuredH="222" zOrder="12" locked="false" isInGroup="-1"/>
+    <control controlID="60" controlTypeID="com.balsamiq.mockups::Icon" x="585" y="505" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>13369344</color>
+        <icon>PushPinIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="61" controlTypeID="com.balsamiq.mockups::TextInput" x="578" y="388" w="344" h="-1" measuredW="150" measuredH="27" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Locanda%20del%20Pirata%20Orbo</text>
+      </controlProperties>
+    </control>
+    <control controlID="62" controlTypeID="com.balsamiq.mockups::TextInput" x="578" y="427" w="348" h="-1" measuredW="201" measuredH="27" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Via%20dei%20bassifondali%2042/C%2C%20Ferrara</text>
+      </controlProperties>
+    </control>
+    <control controlID="63" controlTypeID="com.balsamiq.mockups::TextArea" x="726" y="490" w="200" h="103" measuredW="200" measuredH="140" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>9</size>
+        <text>Nonostante%20il%20nome%20%E8%20un%20posto%20davvero%20carino%0ASi%20pu%F2%20giocare%20fino%20a%20tarda%20ora%20e%20il%20bar%20%E8%20fornito%0AIl%20locandiere%20%E8%20appasionato%20di%20giochi%20astratti%0ANON%20PORTARE%20WARGAMES%0AEVITARE%20GIOCHI%20SUI%20PIRATI</text>
+      </controlProperties>
+    </control>
+    <control controlID="64" controlTypeID="com.balsamiq.mockups::Button" x="570" y="593" w="-1" h="-1" measuredW="243" measuredH="38" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>10027008</color>
+        <icon>LeftArrowIcon%7Cmedium</icon>
+        <text>Salva%20e%20aggiungi%20alle%20mie%20location</text>
+      </controlProperties>
+    </control>
+    <control controlID="65" controlTypeID="com.balsamiq.mockups::Button" x="193" y="587" w="231" h="38" measuredW="273" measuredH="38" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>10027008</color>
+        <icon>DownArrowIcon%7Cmedium</icon>
+        <text>Ok%2C%20procedi%20con%20il%20prossimo%20passaggio%21</text>
+      </controlProperties>
+    </control>
+    <control controlID="66" controlTypeID="com.balsamiq.mockups::iPhone" x="1006" y="162" w="-1" h="-1" measuredW="282" measuredH="510" zOrder="19" locked="false" isInGroup="-1"/>
+  </controls>
+</mockup>

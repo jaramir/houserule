@@ -1,0 +1,77 @@
+<mockup version="1.0" skin="sketch" measuredW="1288" measuredH="731" mockupW="1128" mockupH="600">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="160" y="131" w="800" h="600" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>HouseRule%0Ahttp%3A//www.houserule.it/</text>
+        <verticalScrollbar>false</verticalScrollbar>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::Image" x="178" y="212" w="-1" h="-1" measuredW="279" measuredH="64" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/logo.jpg</src>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::Title" x="526" y="224" w="376" h="-1" measuredW="355" measuredH="41" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>32</size>
+        <text>Organizza%20una%20partita%20di..</text>
+      </controlProperties>
+    </control>
+    <control controlID="23" controlTypeID="com.balsamiq.mockups::Accordion" x="178" y="280" w="764" h="383" measuredW="150" measuredH="234" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>1</selectedIndex>
+        <text>Il%20Gioco%3A%20Die%20Macher%0ALa%20data%20e%20l%27orario%0ALa%20Location%0AAltre%20informazioni</text>
+        <verticalScrollbar>false</verticalScrollbar>
+      </controlProperties>
+    </control>
+    <control controlID="24" controlTypeID="com.balsamiq.mockups::Button" x="364" y="663" w="378" h="36" measuredW="220" measuredH="30" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <icon>ThumbsUpIcon%7Csmall</icon>
+        <text>Salva%20e%20pubblica%20in%20bacheca%21</text>
+      </controlProperties>
+    </control>
+    <control controlID="43" controlTypeID="com.balsamiq.mockups::Calendar" x="205" y="352" w="125" h="121" measuredW="96" measuredH="96" zOrder="5" locked="false" isInGroup="-1"/>
+    <control controlID="44" controlTypeID="com.balsamiq.mockups::TextInput" x="409" y="407" w="-1" h="-1" measuredW="48" measuredH="27" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>21%3A30</text>
+      </controlProperties>
+    </control>
+    <control controlID="46" controlTypeID="com.balsamiq.mockups::Label" x="345" y="407" w="-1" h="-1" measuredW="54" measuredH="21" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Alle%20ore%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="47" controlTypeID="com.balsamiq.mockups::Canvas" x="282" y="422" w="24" h="19" measuredW="100" measuredH="70" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>65535</color>
+      </controlProperties>
+    </control>
+    <control controlID="49" controlTypeID="com.balsamiq.mockups::Label" x="345" y="451" w="-1" h="-1" measuredW="523" measuredH="21" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <color>13576743</color>
+        <text>Attento%3A%20sei%20gi%E0%20prenotato%20per%20Agricola%20%28circa%202%20ore%20di%20gioco%29%20lo%20stesso%20giorno%20alle%2020%3A00%21</text>
+      </controlProperties>
+    </control>
+    <control controlID="50" controlTypeID="com.balsamiq.mockups::Label" x="345" y="362" w="-1" h="-1" measuredW="55" measuredH="21" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Il%20giorno%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="51" controlTypeID="com.balsamiq.mockups::TextInput" x="409" y="359" w="-1" h="-1" measuredW="130" measuredH="27" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Venerd%EC%2014%20Febbraio</text>
+      </controlProperties>
+    </control>
+    <control controlID="52" controlTypeID="com.balsamiq.mockups::Button" x="409" y="532" w="-1" h="-1" measuredW="273" measuredH="38" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>10027008</color>
+        <icon>DownArrowIcon%7Cmedium</icon>
+        <text>Ok%2C%20procedi%20con%20il%20prossimo%20passaggio%21</text>
+      </controlProperties>
+    </control>
+    <control controlID="53" controlTypeID="com.balsamiq.mockups::iPhone" x="1006" y="162" w="-1" h="-1" measuredW="282" measuredH="510" zOrder="13" locked="false" isInGroup="-1"/>
+  </controls>
+</mockup>
