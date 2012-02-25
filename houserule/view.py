@@ -2,7 +2,7 @@
 # coding: utf-8
 
 from houserule import app, db
-from flask import render_template, request, redirect, url_for, flash
+from flask import render_template, request, redirect, url_for, flash, send_from_directory
 from form import RegistrationForm, LoginForm
 from model import User
 from flaskext.login import login_user, logout_user, login_required, current_user
@@ -49,3 +49,10 @@ def logout():
 #    db.create_all()
 #    return redirect( url_for( "index" ) )
 
+
+@app.route( "/googleb17904b58da8b53a.html" )
+def google_verification( self ):
+    return send_from_directory(
+        app.static_folder,
+        '/googleb17904b58da8b53a.html',
+        mimetype='text/plain' )

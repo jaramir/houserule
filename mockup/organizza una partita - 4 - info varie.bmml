@@ -1,4 +1,4 @@
-<mockup version="1.0" skin="sketch" measuredW="1288" measuredH="743" mockupW="1128" mockupH="612">
+<mockup version="1.0" skin="sketch" measuredW="960" measuredH="743" mockupW="800" mockupH="612">
   <controls>
     <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="160" y="131" w="800" h="600" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
       <controlProperties>
@@ -33,43 +33,42 @@
         <text>Salva%20e%20pubblica%20in%20bacheca%21</text>
       </controlProperties>
     </control>
-    <control controlID="66" controlTypeID="com.balsamiq.mockups::iPhone" x="1006" y="162" w="-1" h="-1" measuredW="282" measuredH="510" zOrder="5" locked="false" isInGroup="-1"/>
-    <control controlID="67" controlTypeID="com.balsamiq.mockups::StickyNote" x="757" y="620" w="-1" h="-1" measuredW="109" measuredH="123" zOrder="6" locked="false" isInGroup="-1">
+    <control controlID="67" controlTypeID="com.balsamiq.mockups::StickyNote" x="757" y="620" w="-1" h="-1" measuredW="109" measuredH="123" zOrder="5" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Solo%20adesso%20si%20attiva%20il%20bottone%20finale</text>
       </controlProperties>
     </control>
-    <control controlID="68" controlTypeID="com.balsamiq.mockups::TextArea" x="206" y="420" w="266" h="119" measuredW="200" measuredH="140" zOrder="7" locked="false" isInGroup="-1">
+    <control controlID="68" controlTypeID="com.balsamiq.mockups::TextArea" x="206" y="420" w="266" h="119" measuredW="200" measuredH="140" zOrder="6" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Partita%20per%20principianti</text>
       </controlProperties>
     </control>
-    <control controlID="69" controlTypeID="com.balsamiq.mockups::Label" x="191" y="399" w="-1" h="-1" measuredW="98" measuredH="21" zOrder="8" locked="false" isInGroup="-1">
+    <control controlID="69" controlTypeID="com.balsamiq.mockups::Label" x="191" y="399" w="-1" h="-1" measuredW="98" measuredH="21" zOrder="7" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Informazioni%20utili%3A</text>
       </controlProperties>
     </control>
-    <control controlID="70" controlTypeID="com.balsamiq.mockups::StickyNote" x="601" y="405" w="316" h="183" measuredW="109" measuredH="123" zOrder="9" locked="false" isInGroup="-1">
+    <control controlID="70" controlTypeID="com.balsamiq.mockups::StickyNote" x="601" y="405" w="316" h="183" measuredW="109" measuredH="123" zOrder="8" locked="false" isInGroup="-1">
       <controlProperties>
         <text>***%20Idee%20***%0APubblicizza%20su%20Facebook%2C%20Twitter..%0AManda%20un%20invito%20a..%0AMandami%20un%20sms/email%206%20ore%20prima..</text>
       </controlProperties>
     </control>
-    <control controlID="71" controlTypeID="com.balsamiq.mockups::Label" x="191" y="554" w="-1" h="-1" measuredW="160" measuredH="21" zOrder="10" locked="false" isInGroup="-1">
+    <control controlID="71" controlTypeID="com.balsamiq.mockups::Label" x="191" y="554" w="-1" h="-1" measuredW="160" measuredH="21" zOrder="9" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Numero%20minimo%20di%20giocatori%3A</text>
       </controlProperties>
     </control>
-    <control controlID="73" controlTypeID="com.balsamiq.mockups::TextInput" x="378" y="551" w="-1" h="-1" measuredW="23" measuredH="27" zOrder="11" locked="false" isInGroup="-1">
+    <control controlID="73" controlTypeID="com.balsamiq.mockups::TextInput" x="378" y="551" w="-1" h="-1" measuredW="23" measuredH="27" zOrder="10" locked="false" isInGroup="-1">
       <controlProperties>
         <text>2</text>
       </controlProperties>
     </control>
-    <control controlID="74" controlTypeID="com.balsamiq.mockups::TextInput" x="378" y="585" w="-1" h="-1" measuredW="22" measuredH="27" zOrder="12" locked="false" isInGroup="-1">
+    <control controlID="74" controlTypeID="com.balsamiq.mockups::TextInput" x="378" y="585" w="-1" h="-1" measuredW="22" measuredH="27" zOrder="11" locked="false" isInGroup="-1">
       <controlProperties>
         <text>6</text>
       </controlProperties>
     </control>
-    <control controlID="75" controlTypeID="com.balsamiq.mockups::Label" x="191" y="588" w="-1" h="-1" measuredW="170" measuredH="21" zOrder="13" locked="false" isInGroup="-1">
+    <control controlID="75" controlTypeID="com.balsamiq.mockups::Label" x="191" y="588" w="-1" h="-1" measuredW="170" measuredH="21" zOrder="12" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Numero%20massimo%20di%20giocatori%3A</text>
       </controlProperties>
