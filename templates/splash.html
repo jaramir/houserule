@@ -3,6 +3,7 @@
   <head>
     <title>HouseRule</title>
     <link rel="shortcut icon" href="{{ url_for( 'static', filename='favicon.ico' ) }}" />
+    <meta name="description" content="HouseRule: Troviamoci a Giocare! Un sito per organizzare partite di BoardGame e cercare giocatori" />
     <style type="text/css">
       #banner {
         background: url(/static/banner.jpg) no-repeat center center;
@@ -12,5 +13,18 @@
   </head>
   <body>
     <div id="banner"></div>
+    <!-- google analytics start -->
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-29493385-1']);
+      _gaq.push(['_setDomainName', 'houserule.it']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    <!-- google analytics end -->
   </body>
 </html>
