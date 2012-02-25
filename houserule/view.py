@@ -49,10 +49,9 @@ def logout():
 #    db.create_all()
 #    return redirect( url_for( "index" ) )
 
-
 @app.route( "/googleb17904b58da8b53a.html" )
-def google_verification( self ):
+def google_verification():
     return send_from_directory(
         app.static_folder,
-        '/googleb17904b58da8b53a.html',
+        'googleb17904b58da8b53a.html',
         mimetype='text/plain' )
