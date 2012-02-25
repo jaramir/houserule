@@ -8,6 +8,9 @@ SQLAlchemy==0.7.5
 WTForms==0.6.3
 Werkzeug==0.8.3
 distribute==0.6.24
+gevent==0.13.6
+greenlet==0.3.4
+gunicorn==0.13.4
 psycopg2==2.4.4
 py-bcrypt==0.2
 wsgiref==0.1.2
