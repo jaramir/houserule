@@ -11,7 +11,7 @@ app = Flask( __name__,
     static_folder="../static",
     template_folder="../templates" )
 
-app.secret_key = os.urandom( 24 )
+app.secret_key = os.environ["SECRET_KEY"]
 
 bcrypt = Bcrypt( app )
 
