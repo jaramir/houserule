@@ -3,9 +3,10 @@
 
 from houserule import app, db
 from flask import render_template, request, redirect, url_for, flash, send_from_directory
-from form import RegistrationForm, LoginForm
+from form import RegistrationForm, LoginForm, BGGTestForm
 from model import User
 from flaskext.login import login_user, logout_user, login_required, current_user
+import pyBGG
 
 @app.route( "/" )
 def splash():
@@ -42,6 +43,15 @@ def logout():
     logout_user()
     flash( "Buon gioco!" )
     return redirect( url_for( "index" ) )
+
+@app.route( "/bggtest", methods=( "GET", "POST" ) )
+@login_required
+def bggtest():
+    form = BGGTestForm()
+    collection = []
+    if form.validate_on_submit():
+        collection = pyBGG.collection( form.username.data, own=True, prefetch=True )
+    return render_template( "bggtest.html", form=form, collection=collection )
 
 #@app.route( "/initdb" )
 #@login_required

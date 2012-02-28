@@ -74,3 +74,7 @@ class LoginForm( Form ):
     remember = BooleanField( "Resta collegato" )
 
     submit = SubmitField( "Accedi" )
+
+class BGGTestForm( Form ):
+    username = TextField( "Nome utente BGG" )
+    submit = SubmitField( "Elenca giochi" )
