@@ -52,9 +52,3 @@ def bggtest():
     if form.validate_on_submit():
         collection = pyBGG.collection( form.username.data, own=True, prefetch=True )
     return render_template( "bggtest.html", form=form, collection=collection )
-
-#@app.route( "/initdb" )
-#@login_required
-#def initdb():
-#    db.create_all()
-#    return redirect( url_for( "index" ) )
