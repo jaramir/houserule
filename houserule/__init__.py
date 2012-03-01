@@ -22,14 +22,10 @@ login_manager.setup_app( app )
 def load_user( id ):
     return User.query.filter_by( id=id ).first()
 
-if os.environ.get( "DEBUG", "0" ) == "1":
-    app.config["DEBUG"] = True
-
-app.config["SQLALCHEMY_DATABASE_URI"] = \
-    os.environ.get( "HEROKU_SHARED_POSTGRESQL_ORANGE_URL", "sqlite://" )
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environ["HEROKU_SHARED_POSTGRESQL_ORANGE_URL"]
 
 db = SQLAlchemy( app )
 
-from model import *
-from view import *
-from form import *
+from models import *
+from views import *
+from forms import *

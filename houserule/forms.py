@@ -5,7 +5,7 @@ from flaskext.wtf import Form, validators, ValidationError
 from flaskext.wtf import TextField, PasswordField, SubmitField, BooleanField
 from flaskext.wtf.html5 import EmailField
 
-from model import User
+from models import User
 from houserule import bcrypt
 
 class Unique( object ):
@@ -78,3 +78,6 @@ class LoginForm( Form ):
 class BGGTestForm( Form ):
     username = TextField( "Nome utente BGG" )
     submit = SubmitField( "Elenca giochi" )
+
+class MatchForm( Form ):
+    submit = SubmitField( "Salva" )
