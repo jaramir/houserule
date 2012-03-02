@@ -3,31 +3,32 @@
 
 import os
 os.environ["SECRET_KEY"] = "unittest"
+os.environ["HEROKU_SHARED_POSTGRESQL_ORANGE_URL"] = "sqlite://"
 
 import unittest
 import houserule
 
 houserule.app.config["TESTING"] = True
-houserule.app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite://"
 houserule.app.config["CSRF_ENABLED"] = False
 
-class TestApp( unittest.TestCase ):
+class TestWebApplication( unittest.TestCase ):
+    # slow tests that interact with the application via simulated web requests
 
     def setUp( self ):
         houserule.db.create_all()
-        self.app = houserule.app.test_client()
+        self.client = houserule.app.test_client()
 
     def tearDown( self ):
         houserule.db.drop_all()
 
     def test_home_page_works( self ):
-        r = self.app.get( '/' )
+        r = self.client.get( '/' )
         self.assertTrue( r.data )
-        self.assertEquals( r.status_code, 200 )
+        self.assertEqual( r.status_code, 200 )
 
     def test_404_page( self ):
-        r = self.app.get( '/i-am-not-found/' )
-        self.assertEquals( r.status_code, 404 )
+        r = self.client.get( '/i-am-not-found/' )
+        self.assertEqual( r.status_code, 404 )
 
     def test_register( self ):
         data = {
@@ -36,7 +37,7 @@ class TestApp( unittest.TestCase ):
             "password": "cicciociccio",
             "verify": "cicciociccio",
         }
-        r = self.app.post( "/register", data=data, follow_redirects=True )
+        r = self.client.post( "/register", data=data, follow_redirects=True )
         self.assertIn( "Grazie", r.data )
 
     def test_register_unique_username( self ):
@@ -49,7 +50,7 @@ class TestApp( unittest.TestCase ):
             "username": "ciccio",
             "password": "cicciociccio",
         }
-        r = self.app.post( "/login", data=data, follow_redirects=True )
+        r = self.client.post( "/login", data=data, follow_redirects=True )
         self.assertIn( "Bentornato ciccio", r.data )
 
     def test_ciccio_is_the_one( self ):
@@ -60,19 +61,22 @@ class TestApp( unittest.TestCase ):
         self.assertEqual( users[0].username, "ciccio" )
 
     def test_match_requires_login( self ):
-        r = self.app.post( "/match", data={} )
-        self.assertEqual( "401 UNAUTHORIZED", r.status )
+        r = self.client.post( "/match", data={} )
+        self.assertEqual( 401, r.status_code )
 
     def test_create_match( self ):
         self.test_login()
         data = {
-            "bgg_id": "421",
-            "name": "1830: Railways & Robber Barons",
-            "thumbnail": "http://cf.geekdo-images.com/images/pic882119_t.jpg",
+            "game_name": "Gioco dell'Oca",
+            "bgg_game_id": "1001",
             "user_id": "1",
         }
-        r = self.app.post( "/match", data=data, follow_redirects=True )
+        r = self.client.post( "/match", data=data, follow_redirects=True )
         self.assertIn( "Grazie", r.data )
+        # check that the data are here
+        match = houserule.models.Match.query.first()
+        self.assertEqual( match.game.name, data["game_name"] )
+        self.assertEqual( match.user.username, "ciccio" )
 
 if __name__ == '__main__':
     unittest.main()

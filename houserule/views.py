@@ -4,6 +4,7 @@
 from houserule import app, db
 from flask import render_template, request, redirect, url_for, flash, send_from_directory
 from flaskext.login import login_user, logout_user, login_required, current_user
+from utils import jsonify
 
 import pyBGG
 import forms
@@ -59,6 +60,38 @@ def bggtest():
 def match():
     form = forms.MatchForm()
     if form.validate_on_submit():
+
+        # trova o crea il gioco
+        game = models.Game.by_bgg_id( form.bgg_game_id.data )
+        if not game:
+            game = models.Game()
+            game.bgg_id = form.bgg_game_id.data
+            game.name = form.game_name.data
+            db.session.add( game )
+
+        # crea il match
+        match = models.Match()
+        match.game = game
+        match.user = current_user
+        db.session.add( match )
+
+        # salva
+        db.session.commit()
+
         flash( "Grazie per aver proposto una nuova partita!" )
         return redirect( url_for( "index" ) )
+
     return render_template( "match.html", form=form )
+
+@app.route( "/search/game" )
+@login_required
+def ajax_game_search():
+    term = request.args["term"]
+    games = pyBGG.search( term, prefetch=True )
+    rv = []
+    for game in games:
+        rv.append( {
+            "name": game.name,
+            "image": game.thumbnail,
+        } )
+    return jsonify( rv )

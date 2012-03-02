@@ -1,9 +1,8 @@
 #!/usr/bin/python
 # coding: utf-8
 
-from flaskext.wtf import Form, validators, ValidationError
-from flaskext.wtf import TextField, PasswordField, SubmitField, BooleanField
-from flaskext.wtf.html5 import EmailField
+from flaskext.wtf import *
+from flaskext.wtf.html5 import *
 
 from models import User
 from houserule import bcrypt
@@ -80,4 +79,13 @@ class BGGTestForm( Form ):
     submit = SubmitField( "Elenca giochi" )
 
 class MatchForm( Form ):
+    game_name = HiddenField( "Nome del Gioco", [
+        validators.required( "Nome del gioco non specificato" ),
+    ] )
+
+    bgg_game_id = HiddenField( "ID del gioco su BGG", [
+        validators.required( "ID del gioco su BGG non specificato" ),
+        validators.Regexp( "\d+", message="ID del gioco deve essere un numero" ),
+    ] )
+
     submit = SubmitField( "Salva" )

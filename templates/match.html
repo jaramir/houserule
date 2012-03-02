@@ -1,10 +1,47 @@
 {% extends "layout.html" %}
-{% from "_formhelpers.html" import render_field %}
+
+{% block js %}
+  <script src="{{ url_for( "static", filename="jquery-1.7.1.min.js" ) }}"></script>
+  <script type="text/javascript">
+    function search_games() {
+      $.ajax( {
+        type: "GET",
+        url: "{{ url_for( "ajax_game_search" ) }}",
+        data: {
+          term: $("#game_search").val()
+        },
+        dataType: "json",
+        success: function( data, textStatus, jqXHR ) {
+          var r = $("#game_search_results");
+          r.html( "" );
+          $.each( data, function( idx, item ) {
+            var g = $( '<div class="game"><img src="' + item.image + '" /><span>' + item.name + '</span></div>' );
+            g.bind( "click", function() {
+              select_game( g );
+            } );
+            r.append( g )
+          } );
+        }
+      } );
+    }
+
+    function select_game( obj ) {
+      obj.addClass( "hilite" );
+    }
+  </script>
+{% endblock %}
 
 {% block body %}
-  <form method="POST" action="{{ url_for( "bggtest" ) }}">
+
+  <div>
+    <input type="text" id="game_search" value="" />
+    <input type="button" value="Cerca" onclick="search_games();" />
+    <div id="game_search_results"></div>
+  </div>
+
+  <form method="POST" action="{{ url_for( "match" ) }}">
     {{ form.hidden_tag() }}
     {{ form.submit }}
   </form>
-
+  {{ form.errors }}
 {% endblock %}
