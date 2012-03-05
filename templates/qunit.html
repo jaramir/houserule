@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block css %}
-  <link rel="stylesheet" href="{{ url_for( "static", filename="qunit.css" ) }}">
+  <link rel="stylesheet" href="{{ url_for( "static", filename="css/qunit.css" ) }}">
 {% endblock %}
 
 {% block body %}
@@ -10,6 +10,6 @@
 {% endblock %}
 
 {% block js %}
-  <script src="{{ url_for( "static", filename="qunit.js" ) }}"></script>
-  <script src="{{ url_for( "static", filename="test.js" ) }}"></script>
+  <script src="{{ url_for( "static", filename="js/qunit.js" ) }}"></script>
+  <script src="{{ url_for( "static", filename="js/test.js" ) }}"></script>
 {% endblock %}

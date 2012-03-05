@@ -2,14 +2,14 @@
 <html>
   <head>
     <title>HouseRule</title>
-    <link rel="stylesheet" href="{{ url_for( 'static', filename='main.css' ) }}" />
-    <link rel="shortcut icon" href="{{ url_for( 'static', filename='favicon.ico' ) }}" />
+    <link rel="stylesheet" href="{{ url_for( 'static', filename='css/main.css' ) }}" />
+    <link rel="shortcut icon" href="{{ url_for( 'static', filename='media/favicon.ico' ) }}" />
     {% block css %}{% endblock %}
   </head>
   <body>
 
     <a href="{{ url_for( "index" ) }}">
-      <img id="logo" src="{{ url_for( "static", filename="logo.jpg" ) }}">
+      <img id="logo" src="{{ url_for( "static", filename="media/logo.jpg" ) }}">
     </a>
 
     {% with messages = get_flashed_messages() %}
@@ -40,9 +40,9 @@
     </script>
     <!-- google analytics end -->
 
-    <script type="text/javascript" src="{{ url_for( "static", filename="jquery-1.7.1.min.js" ) }}"></script>
-    <script type="text/javascript" src="{{ url_for( "static", filename="jquery-ui-1.8.18.custom.min.js" ) }}"></script>
-    <script type="text/javascript" src="{{ url_for( "static", filename="main.js" ) }}"></script>
+    <script type="text/javascript" src="{{ url_for( "static", filename="js/jquery-1.7.1.min.js" ) }}"></script>
+    <script type="text/javascript" src="{{ url_for( "static", filename="js/jquery-ui-1.8.18.custom.min.js" ) }}"></script>
+    <script type="text/javascript" src="{{ url_for( "static", filename="js/main.js" ) }}"></script>
     {% block js %}{% endblock %}
 
   </body>
