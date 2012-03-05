@@ -95,3 +95,7 @@ def ajax_game_search():
             "image": game.thumbnail,
         } )
     return jsonify( rv )
+
+@app.route( "/qunit" )
+def qunit():
+    return render_template( "qunit.html" )
