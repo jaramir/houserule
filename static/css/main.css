@@ -1,3 +1,19 @@
-.hilite {
-    background-color: green;
+#games {
+    border: 2px solid black;
+    height: 300px;
+    overflow-y: scroll;
+}
+
+#games .game {
+    border: 1px solid #CCCCCC;
+    display: inline-block;
+    height: 190px;
+    text-align: center;
+    width: 220px;
+    vertical-align: middle; /* viene ignorata ma serve!? o_O */
+}
+
+#games .game span {
+    display: block;
+    font-size: smaller;
 }

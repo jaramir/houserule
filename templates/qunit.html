@@ -10,6 +10,7 @@
 {% endblock %}
 
 {% block js %}
+  <script src="{{ url_for( "static", filename="js/jquery.mockjax.js" ) }}"></script>
   <script src="{{ url_for( "static", filename="js/qunit.js" ) }}"></script>
   <script src="{{ url_for( "static", filename="js/test.js" ) }}"></script>
 {% endblock %}

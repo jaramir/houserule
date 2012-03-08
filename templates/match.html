@@ -3,7 +3,9 @@
 {% block body %}
 
   <div>
-    <div id="game_finder"></div>
+    <input type="text" id="term"/>
+    <input type="button" value="Cerca" onclick="$('#games').data('game_finder').search($('#term').val());"/>
+    <div id="games"></div>
   </div>
 
   <form method="POST" action="{{ url_for( "match" ) }}">
@@ -18,7 +20,7 @@
 
   <script type="text/javascript">
     $(document).ready( function() {
-      $("#game_finder").game_finder();
+      $("#games").game_finder();
     } );
   </script>
 

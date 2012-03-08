@@ -1,50 +1,43 @@
-test( "fixture is working", function() {
-    $("#qunit-fixture").html( '<div id="test_element"></div>' );
-
-    ok(
-        $( "#test_element", $("#qunit-fixture") ).length == 1,
-        "qunit-fixture is not working"
-    );
+$.mockjax( {
+    url: '/search/game', // ?term=catan
+    proxy: '/static/fixture/search_game.json'
 } );
 
-test( "can create a game finder", function() {
-    $("#qunit-fixture").html( '<div id="test_search_game"></div>' );
-    $("#test_search_game").game_finder();
-
-    ok(
-        $( "#test_search_game", $("#qunit-fixture") ).length == 1,
-        "game_finder initialization failed"
-    );
-} );
-
-test( "game finder has an input", function() {
-    $("#qunit-fixture").html( '<div id="test_search_game"></div>' );
-    $("#test_search_game").game_finder();
-
-    ok(
-      $( 'input[type="text"]', $("#test_search_game") ).length == 1,
-      'game_finder should contain an input[type="text"] element'
-    );
-} );
-
-test( "game finder has a button", function() {
-    $("#qunit-fixture").html( '<div id="test_search_game"></div>' );
-    $("#test_search_game").game_finder();
-
-    ok(
-      $( 'input[type="button"]', $("#test_search_game") ).length == 1,
-      'game_finder should contain an input[type="button"] element'
-    );
+module( "game_finder", {
+    setup: function() {
+        var onclick = "$('#finder').data('game_finder').search($('#term').val());"
+        $("#qunit-fixture").html(
+            '<div id="finder"></div>' +
+            '<input type="text" id="term" />' +
+            '<input type="button" id="goto" onclick="' + onclick + '" />'
+        );
+        $("#finder").game_finder();
+    }
 } );
 
 test( "we can search for catan", function() {
-    $("#qunit-fixture").html( '<div id="test_search_game"></div>' );
-    $("#test_search_game").game_finder();
-    $( 'input[type="text"]', $("#test_search_game") ).val( "catan" );
-    $( 'input[type="button"]', $("#test_search_game") ).click();
+    $( '#term', $("#qunit-fixture") ).val( "catan" );
+    $( '#goto', $("#qunit-fixture") ).click();
 
-    ok(
-      $( '.game', $("#test_search_game") ).length > 0,
-      "game_finder should contain some .game elements"
-    );
+    expect( 3 );
+    stop(); // give it some time..
+
+    setTimeout( function() {
+        equal(
+            $( '.game', $("#finder") ).length, 7,
+            "game_finder should contain seven .game elements"
+        );
+        equal(
+            $( '.game img', $("#finder") ).first().attr( "src" ),
+            "http://cf.geekdo-images.com/images/pic1115825_t.jpg",
+            "game_finder should contain 7 Wonders: Catan Island (image)"
+        );
+        equal(
+            $( '.game span', $("#finder") ).first().html(),
+            "7 Wonders: Catan Island",
+            "game_finder should contain 7 Wonders: Catan Island (text)"
+        );
+        start();
+    }, 750 );
+
 } );

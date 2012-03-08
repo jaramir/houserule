@@ -1,12 +1,32 @@
 #!/usr/bin/python
 # coding: utf-8
 
+class MockPyBGGBoardGame( object ):
+    def __init__( self, *args, **kwargs ):
+        self.__dict__ = kwargs
+
+class MockPyBGG( object ):
+    def search( self, term, prefetch=False ):
+        return [
+            MockPyBGGBoardGame( thumbnail="http://cf.geekdo-images.com/images/pic1115825_t.jpg", name="7 Wonders: Catan Island" ),
+            MockPyBGGBoardGame( thumbnail="http://cf.geekdo-images.com/images/pic135066_t.jpg",  name="Catan Card Game" ),
+            MockPyBGGBoardGame( thumbnail="http://cf.geekdo-images.com/images/pic976200_t.jpg",  name="Catan Dice Game" ),
+            MockPyBGGBoardGame( thumbnail=None,                                                  name=u"Die Siedler von Catan - Th\u00fcringen Edition" ),
+            MockPyBGGBoardGame( thumbnail="http://cf.geekdo-images.com/images/pic195977_t.jpg",  name="Simply Catan" ),
+            MockPyBGGBoardGame( thumbnail="http://cf.geekdo-images.com/images/pic1210879_t.jpg", name="Star Trek Catan" ),
+            MockPyBGGBoardGame( thumbnail="http://cf.geekdo-images.com/images/pic918589_t.jpg",  name="The Struggle for Catan" )
+            ]
+
+import sys
+sys.modules["pyBGG"] = MockPyBGG()
+
 import os
 os.environ["SECRET_KEY"] = "unittest"
 os.environ["HEROKU_SHARED_POSTGRESQL_ORANGE_URL"] = "sqlite://"
 
 import unittest
 import houserule
+import json
 
 houserule.app.config["TESTING"] = True
 houserule.app.config["CSRF_ENABLED"] = False
@@ -77,6 +97,18 @@ class TestWebApplication( unittest.TestCase ):
         match = houserule.models.Match.query.first()
         self.assertEqual( match.game.name, data["game_name"] )
         self.assertEqual( match.user.username, "ciccio" )
+
+    def test_game_search( self ):
+        # check the fixture in common with the client side
+        with open( "static/fixture/search_game.json" ) as fp:
+            fixture = json.load( fp )
+
+        self.test_login()
+        response = self.client.get( "/search/game?term=catan" )
+        self.assertEqual( 200, response.status_code )
+        data = json.loads( response.data )
+        self.assertListEqual( data, fixture )
+
 
 if __name__ == '__main__':
     unittest.main()
