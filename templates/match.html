@@ -1,27 +1,16 @@
 {% extends "layout.html" %}
+{% from "_formhelpers.html" import render_field %}
 
 {% block body %}
 
-  <div>
-    <input type="text" id="term"/>
-    <input type="button" value="Cerca" onclick="$('#games').data('game_finder').search($('#term').val());"/>
-    <div id="games"></div>
-  </div>
-
   <form method="POST" action="{{ url_for( "match" ) }}">
     {{ form.hidden_tag() }}
+    {{ render_field( form.game_name ) }}
+    {{ render_field( form.location ) }}
     {{ form.submit }}
   </form>
-  {{ form.errors }}
 
 {% endblock %}
 
 {% block js %}
-
-  <script type="text/javascript">
-    $(document).ready( function() {
-      $("#games").game_finder();
-    } );
-  </script>
-
 {% endblock %}

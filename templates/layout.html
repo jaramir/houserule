@@ -1,16 +1,18 @@
 <!doctype html>
 <html>
   <head>
-    <title>HouseRule</title>
+    <title>HouseRule - {{ title }}</title>
     <link rel="stylesheet" href="{{ url_for( 'static', filename='css/main.css' ) }}" />
+    <link rel="stylesheet" href="{{ url_for( 'static', filename='css/smoothness/jquery-ui-1.8.18.custom.css' ) }}" />
     <link rel="shortcut icon" href="{{ url_for( 'static', filename='media/favicon.ico' ) }}" />
     {% block css %}{% endblock %}
   </head>
   <body>
 
-    <a href="{{ url_for( "index" ) }}">
-      <img id="logo" src="{{ url_for( "static", filename="media/logo.jpg" ) }}">
-    </a>
+    <div class="topbar">
+      <a href="{{ url_for( "index" ) }}"><img src="{{ url_for( "static", filename="media/logo.jpg" ) }}"></a>
+      <span>{{ title }}</span>
+    </div>
 
     {% with messages = get_flashed_messages() %}
       {% if messages %}

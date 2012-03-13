@@ -17,6 +17,7 @@ args = parser.parse_args()
 from houserule import app, db
 
 if args.initdb:
+    print " * initializing db"
     db.create_all()
 
 app.run( "0.0.0.0", port, debug=args.debug )

@@ -18,4 +18,25 @@
       </li>
     {% endif %}
   </ul>
+
+  <table class="matches">
+    <thead>
+      <tr>
+        <th>Gioco</th>
+        <th>Location</th>
+        <th>Organizzatore</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for match in matches %}
+      <tr>
+        <td>{{ match.game_name }}</td>
+        <td>{{ match.location }}</td>
+        <td>{{ match.user.username }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+
 {% endblock %}

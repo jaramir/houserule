@@ -1,19 +1,39 @@
-#games {
-    border: 2px solid black;
-    height: 300px;
-    overflow-y: scroll;
+body {
+  margin-top: 80px;
 }
 
-#games .game {
-    border: 1px solid #CCCCCC;
-    display: inline-block;
-    height: 190px;
-    text-align: center;
-    width: 220px;
-    vertical-align: middle; /* viene ignorata ma serve!? o_O */
+.topbar {
+  height: 70px;
+  line-height: 70px;
+  border-bottom: 2px dashed black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
-#games .game span {
-    display: block;
-    font-size: smaller;
+.topbar img {
+  float: left;
+}
+
+.topbar span {
+  float: right;
+  font-size: 2.5em;
+}
+
+.matches {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+.matches th {
+  padding: 5px;
+  background-color: black;
+  color: white;
+}
+.matches td {
+  border: 1px solid black;
+  padding: 5px;
+}
+.matches tbody tr:hover {
+  background-color: #eee;
 }

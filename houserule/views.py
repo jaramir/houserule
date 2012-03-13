@@ -15,7 +15,8 @@ def splash():
 
 @app.route( "/index" )
 def index():
-    return render_template( "index.html" )
+    matches = models.Match.query.all()
+    return render_template( "index.html", matches=matches, title="Troviamoci a giocare!" )
 
 @app.route( "/register", methods=( "GET", "POST" ) )
 def register():
@@ -26,7 +27,7 @@ def register():
         db.session.commit()
         flash( "Grazie per esserti registrato!" )
         return redirect( url_for( "index" ) )
-    return render_template( "register.html", form=form )
+    return render_template( "register.html", form=form, title="Registrazione nuovo utente" )
 
 @app.route( "/login", methods=( "GET", "POST" ) )
 def login():
@@ -36,7 +37,7 @@ def login():
         login_user( user, remember=form.remember.data )
         flash( "Bentornato %s!" % user.username )
         return redirect( request.args.get( "next" ) or url_for( "index" ) )
-    return render_template( "login.html", form=form )
+    return render_template( "login.html", form=form, title="Login" )
 
 @app.route( "/logout" )
 @login_required
@@ -64,8 +65,8 @@ def match():
         flash( "Grazie per aver proposto una nuova partita!" )
         return redirect( url_for( "index" ) )
 
-    return render_template( "match.html", form=form )
+    return render_template( "match.html", form=form, title="Organizza una partita" )
 
 @app.route( "/qunit" )
 def qunit():
-    return render_template( "qunit.html" )
+    return render_template( "qunit.html", title="UnitTest JavaScript" )
