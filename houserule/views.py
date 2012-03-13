@@ -9,6 +9,8 @@ from utils import jsonify
 import forms
 import models
 
+from sqlalchemy import distinct
+
 @app.route( "/" )
 def splash():
     return render_template( "splash.html" )
@@ -67,6 +69,26 @@ def match():
 
     return render_template( "match.html", form=form, title="Organizza una partita" )
 
+@app.route( "/autocomplete/<what>" )
+@login_required
+def autocomplete( what ):
+    term = request.args["term"]
+
+    if what == "game":
+        rset = db.session\
+            .query( distinct( models.Match.game_name ) )\
+            .filter( models.Match.game_name.startswith( term ) )\
+            .all()
+
+    elif what == "location":
+        rset = db.session\
+            .query( distinct( models.Match.location ) )\
+            .filter( models.Match.location.startswith( term ) )\
+            .all()
+
+    return jsonify( [ row[0] for row in rset ] )
+
 @app.route( "/qunit" )
 def qunit():
     return render_template( "qunit.html", title="UnitTest JavaScript" )
+
