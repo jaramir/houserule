@@ -14,4 +14,3 @@ gunicorn==0.13.4
 psycopg2==2.4.4
 py-bcrypt==0.2
 wsgiref==0.1.2
-git+http://github.com/jaramir/pyBGG.git
