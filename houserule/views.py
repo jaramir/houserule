@@ -6,7 +6,6 @@ from flask import render_template, request, redirect, url_for, flash, send_from_
 from flaskext.login import login_user, logout_user, login_required, current_user
 from utils import jsonify
 
-import pyBGG
 import forms
 import models
 
@@ -46,32 +45,16 @@ def logout():
     flash( "Buon gioco!" )
     return redirect( url_for( "index" ) )
 
-@app.route( "/bggtest", methods=( "GET", "POST" ) )
-@login_required
-def bggtest():
-    form = forms.BGGTestForm()
-    collection = []
-    if form.validate_on_submit():
-        collection = pyBGG.collection( form.username.data, own=True, prefetch=True )
-    return render_template( "bggtest.html", form=form, collection=collection )
-
 @app.route( "/match", methods=( "GET", "POST" ) )
 @login_required
 def match():
     form = forms.MatchForm()
     if form.validate_on_submit():
 
-        # trova o crea il gioco
-        game = models.Game.by_bgg_id( form.bgg_game_id.data )
-        if not game:
-            game = models.Game()
-            game.bgg_id = form.bgg_game_id.data
-            game.name = form.game_name.data
-            db.session.add( game )
-
         # crea il match
         match = models.Match()
-        match.game = game
+        match.game_name = form.game_name.data
+        match.location = form.location.data
         match.user = current_user
         db.session.add( match )
 
@@ -82,19 +65,6 @@ def match():
         return redirect( url_for( "index" ) )
 
     return render_template( "match.html", form=form )
-
-@app.route( "/search/game" )
-@login_required
-def ajax_game_search():
-    term = request.args["term"]
-    games = pyBGG.search( term, prefetch=True )
-    rv = []
-    for game in games:
-        rv.append( {
-            "name": game.name,
-            "image": game.thumbnail,
-        } )
-    return jsonify( rv )
 
 @app.route( "/qunit" )
 def qunit():

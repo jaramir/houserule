@@ -2,13 +2,10 @@
 
 {% block body %}
   <ul id="menu">
+    <li>
+      <a href="{{ url_for( "match" ) }}">Organizza una partita</a>
+    </li>
     {% if current_user.is_authenticated() %}
-      <li>
-        <a href="{{ url_for( "bggtest" ) }}">BoardGameGeek Test</a>
-      </li>
-      <li>
-        <a href="{{ url_for( "match" ) }}">Organizza una partita</a>
-      </li>
       <li>
         <a href="{{ url_for( "logout" ) }}">Esci</a>
       </li>

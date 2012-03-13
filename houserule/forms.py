@@ -74,18 +74,13 @@ class LoginForm( Form ):
 
     submit = SubmitField( "Accedi" )
 
-class BGGTestForm( Form ):
-    username = TextField( "Nome utente BGG" )
-    submit = SubmitField( "Elenca giochi" )
-
 class MatchForm( Form ):
-    game_name = HiddenField( "Nome del Gioco", [
+    game_name = TextField( "Nome del Gioco", [
         validators.required( "Nome del gioco non specificato" ),
     ] )
 
-    bgg_game_id = HiddenField( "ID del gioco su BGG", [
-        validators.required( "ID del gioco su BGG non specificato" ),
-        validators.Regexp( "\d+", message="ID del gioco deve essere un numero" ),
+    location = TextField( "Location", [
+        validators.required( "Location non specificata" ),
     ] )
 
     submit = SubmitField( "Salva" )
