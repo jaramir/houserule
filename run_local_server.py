@@ -7,6 +7,8 @@ import os
 os.environ["HEROKU_SHARED_POSTGRESQL_ORANGE_URL"] = "sqlite:///../db.sqlite"
 os.environ["SECRET_KEY"] = "development server not so secret key"
 
+os.environ["GOOGLE_API_BROWSER_KEY"] = "AIzaSyAGPTwga_Nfc0PT6b8xICW9kDARu4o-5U8"
+
 port = int( os.environ.get( "PORT", "5000" ) )
 
 parser = argparse.ArgumentParser( description = "HouseRule Development Server" )

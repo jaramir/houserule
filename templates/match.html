@@ -7,20 +7,67 @@
     {{ form.hidden_tag() }}
     {{ render_field( form.game_name ) }}
     {{ render_field( form.location ) }}
+    <div id="map"></div>
     {{ form.submit }}
   </form>
 
 {% endblock %}
 
+{% block css %}
+  <style type="text/css">
+    #map {
+      width: 500px;
+      height: 350px;
+    }
+  </style>
+{% endblock %}
+
 {% block js %}
+  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key={{ GOOGLE_API_BROWSER_KEY }}&sensor=false"></script>
   <script type="text/javascript">
+    var center = new google.maps.LatLng( 42.00, 12.00 );
+    var geocoder;
+    var map;
+    var zoom_in = 18;
+    var zoom_out = 5;
+
+    var map_options = {
+      center: center,
+      zoom: zoom_out,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+
+    function geocode() {
+      var location = $( "#location" ).val();
+      geocoder.geocode( { 'address': location }, function( results, status ) {
+        if (status == google.maps.GeocoderStatus.OK ) {
+          center = results[0].geometry.location;
+          var marker = new google.maps.Marker( {
+              map: map,
+              position: center
+          } );
+          map.fitBounds( results[0].geometry.bounds );
+        }
+      } );
+    }
+
     $(document).ready( function() {
+      map = new google.maps.Map( $( "#map" ).get( 0 ), map_options );
+      geocoder = new google.maps.Geocoder();
+
       $("#game_name").autocomplete( {
         source: "/autocomplete/game"
       } );
+
       $("#location").autocomplete( {
         source: "/autocomplete/location"
+      } ).keydown( function( event ) {
+        if( event.keyCode == 13 ) {
+          event.preventDefault();
+          geocode();
+        }
       } );
+
     } );
   </script>
 {% endblock %}

@@ -23,6 +23,7 @@ def load_user( id ):
     return User.query.filter_by( id=id ).first()
 
 app.config["SQLALCHEMY_DATABASE_URI"] = os.environ["HEROKU_SHARED_POSTGRESQL_ORANGE_URL"]
+app.config["GOOGLE_API_BROWSER_KEY"] = os.environ["GOOGLE_API_BROWSER_KEY"]
 
 db = SQLAlchemy( app )
 
